@@ -9,7 +9,6 @@ fs.readFile('test.txt', 'utf8', (err, data) => {
     }
     arrayString = data.split("\n")
 
-    console.log(arrayString);
 
     var boardTitle = arrayString[0];
     var taskList;
@@ -17,18 +16,33 @@ fs.readFile('test.txt', 'utf8', (err, data) => {
     var description;
     var progress;
 
+    var foundList = true;
+    var j = 1;
+
+    console.log("Title is: " + boardTitle);
     //task, description, progress, need some sort of loop before we set tasklist again
-    for (let i = 1; i < arrayString.length; i = i + 4){
-        taskList = arrayString[i];
-        console.log("Name of Tasklist: " + taskList);
 
-        task = arrayString[i+1];
-        description = arrayString[i+2];
-        progress = arrayString[i+3];
+    for (let i = 1; i < arrayString.length; i = i + 3){
+        if (arrayString[i] === j.toString()) {
+            taskList = arrayString[i+1];
+            console.log("\nName of LIST: " + taskList);
+            foundList = false;
+            i+=2;
+            j++;
+        }
 
-        console.log("\nName of Task " + task);
-        console.log("\nDescription of task: " + description);
-        console.log("\nCurrent Progress: " + progress + "\n");
+        task = arrayString[i];
+        description = arrayString[i+1];
+        progress = arrayString[i+2];
+
+
+
+
+        console.log("\nName of TASK " + task);
+        console.log("\nDESCRIPTION: " + description);
+        console.log("\nPROGRESS: " + progress + "\n");
+
+
     }
 
 })
