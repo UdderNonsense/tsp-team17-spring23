@@ -85,14 +85,15 @@ class TaskList {
 var listOfTaskLists = []
 
 // For testing purposes
+// We would replace this with the data from the user
 for (let i = 0; i < 3; i++){
     listOfTaskLists[i] = new TaskList();
-    listOfTaskLists[i].name = "LIST NAME" + i;
+    listOfTaskLists[i].name = "LIST NAME " + (i+1);
     for (let j = 0; j < 3; j++){
         listOfTaskLists[i].list[j] = new Task();
-        listOfTaskLists[i].list[j].setName = "Task NAME";
+        listOfTaskLists[i].list[j].setName = "TASK NAME";
         listOfTaskLists[i].list[j].setDescription = "[DESCRIPTION]";
-        listOfTaskLists[i].list[j].progress = Math.round((((j+1)/3) * 100)*100)/100;
+        listOfTaskLists[i].list[j].progress = Math.round(Math.random()*10000)/100;
     }
 }
 
@@ -109,12 +110,12 @@ var currentTask;
 
 for (let i = 0; i < listOfTaskLists.length; i++){
     currentList = listOfTaskLists[i];
-    writeStream.write("\n" + (i+1) + " " + currentList.name);
+    writeStream.write("\n" + (i+1) + "\n" + currentList.name);
     for (let j = 0; j < currentList.length; j ++){
         currentTask = currentList.list[j];
-        writeStream.write("\n" + (i+1) + "." + (j+1) + " " + currentTask.getName);
+        writeStream.write("\n" + currentTask.getName);
         writeStream.write("\n" + currentTask.getDescription);
-        writeStream.write("\nProgress: " + currentTask.progress.toString());
+        writeStream.write("\n" + currentTask.progress.toString());
     }
 
 
