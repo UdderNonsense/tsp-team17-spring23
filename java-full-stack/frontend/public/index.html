@@ -1,56 +1,17 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
-
-</head>
-<body>
-<header>
-    <h1>Welcome, TSP: Group 17!</h1>
-    <div class="toolbar">
-        <button><i class="fas fa-plus"></i> Add Board</button>
-        <button><i class="fas fa-edit"></i> Edit Board</button>
-        <button><i class="fas fa-trash-alt"></i> Remove Board</button>
-    </div>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="kanban.html">Kanban</a></li>
-        </ul>
-    </nav>
-
-
-</header>
-
-<main>
-    <section class="boards-container">
-        <ul class="board-list">
-            <li v-for="board in boards" :class="`board-item ${board.color}`">
-                <div class="board-header">
-                    <h2>{{ board.title }}</h2>
-                <div class="task-progress">
-                    <i class="fas fa-circle"></i>
-                <span class="task-progress-label">{{ board.progress }}%</span>
-                </div>
-                    <div class="task-stats">
-                        <div v-for="stat in board.stats" class="task-stat">
-                        <span class="stat-label">{{ stat.label }}</span>
-                        <span class="stat-value">{{ stat.value }}</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </section>
-</main>
-</body>
-<script src="/frontend/src/assets/index_Vue.js"></script>
-
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>
-
-    

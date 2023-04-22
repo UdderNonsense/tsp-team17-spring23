@@ -2,11 +2,6 @@
 node_modules
 /dist
 
-frontEnd_simon/node_modules
-frontEnd_simon/dist
-
-java-full-stack/frontend/node_modules
-java-fill-stack/frontend/dist
 
 # local env files
 .env.local
