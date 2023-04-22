@@ -8,6 +8,9 @@ frontEnd_simon/dist
 java-full-stack/frontend/node_modules
 java-fill-stack/frontend/dist
 
+finalListOfKanban/node_modules
+finalListOfKanban/dist
+
 # local env files
 .env.local
 .env.*.local
